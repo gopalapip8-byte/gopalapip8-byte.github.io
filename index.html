@@ -3,256 +3,355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ultimate Mode Gaming Website - 100+ game, musik, sosial media, 60FPS smooth">
-<meta name="keywords" content="game gratis, game online, github pages, gaming website">
-<meta name="author" content="ChatGPT">
-<title>ULTIMATE MODE GAME HUB</title>
+<meta name="description" content="Full Poki Mode Game Portal">
+<meta name="keywords" content="game portal, poki clone, html game website">
+<meta name="author" content="Valz New Era">
+<title>🎮 FULL POKI MODE | Valz New Era</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
 body{
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#000,#111,#220033);
-    color:white;
-    overflow-x:hidden;
+font-family:Arial, sans-serif;
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
 }
+
 header{
-    text-align:center;
-    padding:30px;
+padding:20px;
+background:#111;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+position:sticky;
+top:0;
+z-index:100;
 }
-header h1{
-    font-size:45px;
-    color:#00ffcc;
-    text-shadow:0 0 20px #00ffcc;
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#00ffee;
 }
-header p{
-    color:#ccc;
-    margin-top:10px;
+
+.brand{
+font-size:14px;
+color:#aaa;
 }
-.menu{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-    margin-top:20px;
+
+.search{
+padding:12px;
+width:280px;
+border:none;
+border-radius:10px;
+outline:none;
+font-size:16px;
 }
-button{
-    padding:12px 22px;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
+
+.menu button{
+padding:10px 18px;
+border:none;
+border-radius:10px;
+background:#00ffee;
+font-weight:bold;
+cursor:pointer;
+margin-left:8px;
 }
-button:hover{
-    transform:scale(1.08);
+
+.banner{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#001f2f,#000,#220033);
 }
-.play{background:#00ff99;color:black;}
-.vip{background:gold;color:black;}
-.multi{background:#ff4444;color:white;}
-.music{background:#00ccff;color:black;}
+
+.banner h1{
+font-size:52px;
+color:#00ffee;
+}
+
+.banner p{
+color:#bbb;
+margin-top:12px;
+font-size:18px;
+}
+
+.owner{
+margin-top:12px;
+font-size:20px;
+color:#ffd700;
+font-weight:bold;
+}
+
+.categories{
+display:flex;
+gap:12px;
+overflow:auto;
+padding:20px;
+background:#111;
+}
+
+.categories button{
+padding:10px 18px;
+border:none;
+border-radius:30px;
+background:#222;
+color:white;
+cursor:pointer;
+white-space:nowrap;
+}
+
+.categories button:hover{
+background:#00ffee;
+color:black;
+}
 
 .games{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    padding:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+padding:25px;
+max-width:1400px;
+margin:auto;
 }
+
 .card{
-    background:#111;
-    border-radius:18px;
-    padding:20px;
-    box-shadow:0 0 20px rgba(0,255,255,.2);
-    transition:.3s;
+background:#151515;
+border-radius:18px;
+padding:18px;
+transition:.3s;
+box-shadow:0 0 15px rgba(0,255,255,.08);
 }
+
 .card:hover{
-    transform:translateY(-8px);
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(0,255,255,.25);
 }
+
+.thumb{
+height:130px;
+border-radius:14px;
+background:linear-gradient(135deg,#00ffee,#004466);
+margin-bottom:15px;
+}
+
 .card h3{
-    margin-bottom:10px;
-    color:#00ffcc;
+margin-bottom:8px;
+color:#00ffee;
 }
+
+.card p{
+color:#bbb;
+font-size:14px;
+margin-bottom:14px;
+}
+
 .card button{
-    margin-top:10px;
-    width:100%;
+width:100%;
+padding:10px;
+border:none;
+border-radius:10px;
+background:#00ffee;
+font-weight:bold;
+cursor:pointer;
 }
 
-.stats{
-    text-align:center;
-    padding:20px;
-    font-size:24px;
+.panel{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:25px;
+max-width:1400px;
+margin:auto;
 }
 
-.social{
-    text-align:center;
-    padding:25px;
+.box{
+background:#111;
+padding:20px;
+border-radius:16px;
 }
-.social a{
-    display:inline-block;
-    margin:8px;
-    padding:10px 16px;
-    background:#222;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-}
-.social a:hover{
-    background:#00ffcc;
-    color:black;
+
+.box h2{
+color:#00ffee;
+margin-bottom:12px;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#aaa;
+padding:35px;
+text-align:center;
+color:#888;
 }
-canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
+
+.creator{
+color:#ffd700;
+font-size:18px;
+margin-top:8px;
+}
+
+@media(max-width:700px){
+.banner h1{font-size:34px;}
+.search{width:100%;}
+header{justify-content:center;}
 }
 </style>
 </head>
 <body>
 
-<canvas id="bg"></canvas>
-
 <header>
-<h1>🎮 ULTIMATE MODE GAME HUB</h1>
-<p>Gaming Website 60FPS + Musik + Sosmed + Banyak Game</p>
+<div>
+<div class="logo">🎮 POKI MODE</div>
+<div class="brand">By Valz New Era</div>
+</div>
+
+<input type="text" class="search" placeholder="Cari game..." onkeyup="searchGame(this.value)">
 
 <div class="menu">
-<button class="music" onclick="toggleMusic()">🎵 Musik</button>
-<button class="vip">👑 VIP Login</button>
-<button class="multi">🌍 Multiplayer</button>
-<button class="play">🚀 Main Sekarang</button>
+<button onclick="login()">👤 Login</button>
+<button onclick="vip()">👑 VIP</button>
+<button onclick="music()">🎵 Musik</button>
 </div>
 </header>
 
-<div class="stats">
-🏆 Score: <span id="score">0</span>
+<section class="banner">
+<h1>100+ GAME GRATIS</h1>
+<p>Main game online gratis tanpa download • HD • 60FPS</p>
+<div class="owner">👑 Creator: Valz New Era</div>
+</section>
+
+<section class="categories">
+<button>Action</button>
+<button>Racing</button>
+<button>Puzzle</button>
+<button>Sport</button>
+<button>Horror</button>
+<button>Multiplayer</button>
+<button>Arcade</button>
+<button>Adventure</button>
+</section>
+
+<section class="games" id="gameList">
+
+<div class="card game">
+<div class="thumb"></div>
+<h3>Snake</h3>
+<p>Game ular klasik modern.</p>
+<button onclick="play('Snake')">Play</button>
 </div>
 
-<section class="games">
-
-<div class="card">
-<h3>🐍 Snake</h3>
-<p>Game ular klasik seru.</p>
-<button onclick="addScore()">Play</button>
+<div class="card game">
+<div class="thumb"></div>
+<h3>Flappy Bird</h3>
+<p>Terbang hindari pipa.</p>
+<button onclick="play('Flappy Bird')">Play</button>
 </div>
 
-<div class="card">
-<h3>🐦 Flappy Bird</h3>
-<p>Terbang dan hindari pipa.</p>
-<button onclick="addScore()">Play</button>
+<div class="card game">
+<div class="thumb"></div>
+<h3>Space Shooter</h3>
+<p>Tembak musuh luar angkasa.</p>
+<button onclick="play('Space Shooter')">Play</button>
 </div>
 
-<div class="card">
-<h3>❌⭕ Tic Tac Toe</h3>
+<div class="card game">
+<div class="thumb"></div>
+<h3>Tic Tac Toe</h3>
 <p>Main lawan teman.</p>
-<button onclick="addScore()">Play</button>
+<button onclick="play('Tic Tac Toe')">Play</button>
 </div>
 
-<div class="card">
-<h3>🚀 Space Shooter</h3>
-<p>Hancurkan musuh di luar angkasa.</p>
-<button onclick="addScore()">Play</button>
+<div class="card game">
+<div class="thumb"></div>
+<h3>Pong</h3>
+<p>Retro game legendaris.</p>
+<button onclick="play('Pong')">Play</button>
 </div>
 
-<div class="card">
-<h3>🏓 Pong</h3>
-<p>Game retro klasik.</p>
-<button onclick="addScore()">Play</button>
-</div>
-
-<div class="card">
-<h3>🧱 Breakout</h3>
+<div class="card game">
+<div class="thumb"></div>
+<h3>Breakout</h3>
 <p>Pecahkan semua blok.</p>
-<button onclick="addScore()">Play</button>
+<button onclick="play('Breakout')">Play</button>
 </div>
 
 </section>
 
-<section class="social">
-<h2>🌐 Sosial Media</h2><br>
-<a href="#">YouTube</a>
-<a href="#">apipnopal6</a>
-<a href="#">a.nopal._</a>
-<a href="#">Facebook</a>
-<a href="#">Discord</a>
-<a href="#">Telegram</a>
+<section class="panel">
+
+<div class="box">
+<h2>🏆 Leaderboard</h2>
+<p>1. PlayerOne - 9999</p>
+<p>2. GamerX - 8200</p>
+<p>3. ProKing - 7500</p>
+</div>
+
+<div class="box">
+<h2>❤️ Favorite</h2>
+<p>Snake</p>
+<p>Space Shooter</p>
+<p>Pong</p>
+</div>
+
+<div class="box">
+<h2>💰 Monetize</h2>
+<p>Google AdSense Ready</p>
+<p>Premium Membership</p>
+<p>Sponsor Slot</p>
+</div>
+
+<div class="box">
+<h2>⚙ Admin Panel</h2>
+<p>Upload game baru</p>
+<p>Edit game</p>
+<p>Kelola user</p>
+</div>
+
 </section>
 
 <footer>
-💸 MONEY MODE READY | AdSense | SEO | Viral Traffic
+© 2026 Full Poki Mode
+<div class="creator">🔥 Powered By Valz New Era</div>
 </footer>
 
-<audio id="music" loop>
+<audio id="audio" loop>
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b0471f6d.mp3" type="audio/mp3">
 </audio>
 
 <script>
-let score = 0;
-
-function addScore(){
-    score++;
-    document.getElementById("score").innerText = score;
+function play(name){
+alert("🎮 Membuka game: " + name);
 }
 
-function toggleMusic(){
-    const music = document.getElementById("music");
-    if(music.paused){
-        music.play();
-    }else{
-        music.pause();
-    }
+function login(){
+alert("👤 Sistem Login User");
 }
 
-// Background animation 60FPS
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
-
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-let particles = [];
-for(let i=0;i<80;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*3+1,
-        dx:(Math.random()-0.5)*1,
-        dy:(Math.random()-0.5)*1
-    });
+function vip(){
+alert("👑 Membership VIP Aktif");
 }
 
-function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle="#00ffcc";
-        ctx.fill();
-
-        p.x+=p.dx;
-        p.y+=p.dy;
-
-        if(p.x<0||p.x>canvas.width) p.dx*=-1;
-        if(p.y<0||p.y>canvas.height) p.dy*=-1;
-    });
-
-    requestAnimationFrame(animate);
+function music(){
+let a=document.getElementById("audio");
+if(a.paused){
+a.play();
+}else{
+a.pause();
 }
-animate();
+}
 
-window.onresize=()=>{
-    canvas.width=innerWidth;
-    canvas.height=innerHeight;
+function searchGame(value){
+let input=value.toLowerCase();
+let games=document.querySelectorAll(".game");
+
+games.forEach(item=>{
+let text=item.innerText.toLowerCase();
+item.style.display=text.includes(input) ? "block" : "none";
+});
 }
 </script>
 
