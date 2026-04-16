@@ -93,19 +93,6 @@
             transform: translateY(-4px) scale(1.02);
             border-color: var(--neon-pink);
         }
-       .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.3);
-            transform: translate(-50%,-50%);
-            transition: width 0.6s, height 0.6s;
-        }
-       .btn:active::before { width: 300px; height: 300px; }
        .floating-btn {
             position: fixed;
             background: var(--glass);
@@ -165,8 +152,6 @@
             border-radius: 20px;
             background: #000;
             box-shadow: 0 0 40px var(--neon-cyan), inset 0 0 30px rgba(0,255,255,0.1);
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
         }
        .game-menu {
             display: grid;
@@ -316,7 +301,7 @@
             <a href="https://instagram.com/a.nopal._" class="btn">INSTAGRAM</a>
             <a href="https://wa.me/6285161391310" class="btn">WHATSAPP</a>
             <a href="https://tiktok.com/@apipnopal6" class="btn">TIKTOK</a>
-            <a href="https://saweria.co/sek kosong error" class="btn">SUPPORT</a>
+            <a href="https://saweria.co/kosomg" class="btn">SUPPORT</a>
             <div onclick="openGameMenu()" class="btn">ARCADE PRO MAX</div>
         </div>
     </div>
@@ -452,6 +437,13 @@
         const musicBtn = document.getElementById('music-btn');
         musicBtn.onclick = () => { music.paused? (music.play(), musicBtn.innerHTML='⏸️') : (music.pause(), musicBtn.innerHTML='▶️') }
 
+        // FIX MUSIK: Auto play pas klik pertama
+        document.body.addEventListener('click', function autoPlay() {
+            if(music.paused) {
+                music.play().then(()=>{ musicBtn.innerHTML='⏸️'; }).catch(()=>{});
+            }
+        }, { once: true });
+
         function playSound(freq, duration) {
             try {
                 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -516,6 +508,7 @@
             return false;
         }
 
+        // ========== GAME SCRIPTS ==========
         let snakeCanvas, snakeCtx, snake, snakeFood, snakeDx, snakeDy, snakeScore, snakeLoop, snakeChangingDir;
         function initSnake() {
             snakeCanvas = document.getElementById('snakeCanvas');
@@ -646,7 +639,6 @@
             document.getElementById('2048Info').innerHTML='SCORE: '+score2048+' | BEST: '+highScores['2048'];
         }
         function move2048(dir) {
-            let moved=false;
             let oldBoard=JSON.stringify(board2048);
             if(dir==='left'||dir==='right'){
                 for(let r=0;r<4;r++){
@@ -706,4 +698,7 @@
 
         let flappyCanvas,flappyCtx,bird,pipes,flappyScore,flappyLoop,gravity=0.45;
         function initFlappy(){
-            flappyCanvas=document
+            flappyCanvas=document.getElementById('flappyCanvas');
+            flappyCtx=flappyCanvas.getContext('2d');
+            bird={x:80,y:300,v:0,rotation:0};
+            pipes=[];flappyScore
