@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Link Bio Keren</title>
+    <style>
+      body {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        margin-top: 30px;
+        color: white;
+      }
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      h1 {nopal
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 18px;
+        text-shadow: 1px 1px 2px #000000;
+        margin-top: 0;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid white;
+        margin: 20px 0;
+        object-fit: cover;
+      }
+      /* Style buat semua tombol link */
+      .link-button {
+        display: block;
+        width: 250px;
+        margin: 15px auto;
+        background-color: white;
+        color: #e73c7e;
+        padding: 14px 24px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+      }
+      .link-button:hover {
+        transform: scale(1.05);
+        background-color: #f1f1f1;
+      }
+      button {
+        background-color: transparent;
+        color: white;
+        padding: 12px 24px;
+        border: 2px solid white;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 20px 10px 10px 10px;
+      }
+      button:hover {
+        background-color: rgba(255,255,255,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="foto.jpg" alt="Foto Kerenku">
+    <h1>Nama Kamu</h1>
+    <p>Welcome to my page!</p>
+    
+    <button onclick="alert('Makasih udah mampir! Jangan lupa follow ya 🎉')">Klik Aku</button>
+    
+    <!-- MISI: GANTI SEMUA LINK DI BAWAH INI -->
+    
+    <!-- 1. LINK INSTAGRAM - Ganti usernamekamu -->
+    <a class="link-button" href="https://instagram.com/a.nopal.m_" target="_blank">Instagram 📸</a>
+    
+    <!-- 2. LINK WHATSAPP - Ganti 628123456789 jadi nomor WA lu -->
+    <a class="link-button" href="https://wa.me/6285161391310" target="_blank">WhatsApp 💬</a>
+    
+    <!-- 3. LINK TIKTOK - Ganti usernamekamu -->
+    <a class="link-button" href="https://tiktok.com/@apipnopal6" target="_blank">TikTok 🎵</a>
+    
+  </body>
+</html>
