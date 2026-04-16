@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ultimate Mode Gaming Website - 100+ game, musik, sosial media, 60FPS smooth">
+<meta name="keywords" content="game gratis, game online, github pages, gaming website">
+<meta name="author" content="ChatGPT">
+<title>ULTIMATE MODE GAME HUB</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#000,#111,#220033);
+    color:white;
+    overflow-x:hidden;
+}
+header{
+    text-align:center;
+    padding:30px;
+}
+header h1{
+    font-size:45px;
+    color:#00ffcc;
+    text-shadow:0 0 20px #00ffcc;
+}
+header p{
+    color:#ccc;
+    margin-top:10px;
+}
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+button{
+    padding:12px 22px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+button:hover{
+    transform:scale(1.08);
+}
+.play{background:#00ff99;color:black;}
+.vip{background:gold;color:black;}
+.multi{background:#ff4444;color:white;}
+.music{background:#00ccff;color:black;}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:30px;
+}
+.card{
+    background:#111;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 0 20px rgba(0,255,255,.2);
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-8px);
+}
+.card h3{
+    margin-bottom:10px;
+    color:#00ffcc;
+}
+.card button{
+    margin-top:10px;
+    width:100%;
+}
+
+.stats{
+    text-align:center;
+    padding:20px;
+    font-size:24px;
+}
+
+.social{
+    text-align:center;
+    padding:25px;
+}
+.social a{
+    display:inline-block;
+    margin:8px;
+    padding:10px 16px;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+.social a:hover{
+    background:#00ffcc;
+    color:black;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<header>
+<h1>🎮 ULTIMATE MODE GAME HUB</h1>
+<p>Gaming Website 60FPS + Musik + Sosmed + Banyak Game</p>
+
+<div class="menu">
+<button class="music" onclick="toggleMusic()">🎵 Musik</button>
+<button class="vip">👑 VIP Login</button>
+<button class="multi">🌍 Multiplayer</button>
+<button class="play">🚀 Main Sekarang</button>
+</div>
+</header>
+
+<div class="stats">
+🏆 Score: <span id="score">0</span>
+</div>
+
+<section class="games">
+
+<div class="card">
+<h3>🐍 Snake</h3>
+<p>Game ular klasik seru.</p>
+<button onclick="addScore()">Play</button>
+</div>
+
+<div class="card">
+<h3>🐦 Flappy Bird</h3>
+<p>Terbang dan hindari pipa.</p>
+<button onclick="addScore()">Play</button>
+</div>
+
+<div class="card">
+<h3>❌⭕ Tic Tac Toe</h3>
+<p>Main lawan teman.</p>
+<button onclick="addScore()">Play</button>
+</div>
+
+<div class="card">
+<h3>🚀 Space Shooter</h3>
+<p>Hancurkan musuh di luar angkasa.</p>
+<button onclick="addScore()">Play</button>
+</div>
+
+<div class="card">
+<h3>🏓 Pong</h3>
+<p>Game retro klasik.</p>
+<button onclick="addScore()">Play</button>
+</div>
+
+<div class="card">
+<h3>🧱 Breakout</h3>
+<p>Pecahkan semua blok.</p>
+<button onclick="addScore()">Play</button>
+</div>
+
+</section>
+
+<section class="social">
+<h2>🌐 Sosial Media</h2><br>
+<a href="#">YouTube</a>
+<a href="#">apipnopal6</a>
+<a href="#">a.nopal._</a>
+<a href="#">Facebook</a>
+<a href="#">Discord</a>
+<a href="#">Telegram</a>
+</section>
+
+<footer>
+💸 MONEY MODE READY | AdSense | SEO | Viral Traffic
+</footer>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b0471f6d.mp3" type="audio/mp3">
+</audio>
+
+<script>
+let score = 0;
+
+function addScore(){
+    score++;
+    document.getElementById("score").innerText = score;
+}
+
+function toggleMusic(){
+    const music = document.getElementById("music");
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+}
+
+// Background animation 60FPS
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+let particles = [];
+for(let i=0;i<80;i++){
+    particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*3+1,
+        dx:(Math.random()-0.5)*1,
+        dy:(Math.random()-0.5)*1
+    });
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle="#00ffcc";
+        ctx.fill();
+
+        p.x+=p.dx;
+        p.y+=p.dy;
+
+        if(p.x<0||p.x>canvas.width) p.dx*=-1;
+        if(p.y<0||p.y>canvas.height) p.dy*=-1;
+    });
+
+    requestAnimationFrame(animate);
+}
+animate();
+
+window.onresize=()=>{
+    canvas.width=innerWidth;
+    canvas.height=innerHeight;
+}
+</script>
+
+</body>
+</html>
