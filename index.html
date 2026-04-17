@@ -2,358 +2,98 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Full Poki Mode Game Portal">
-<meta name="keywords" content="game portal, poki clone, html game website">
-<meta name="author" content="Valz New Era">
-<title>🎮 FULL POKI MODE | Valz New Era</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Arcade Pro Max HD | 10 Game</title>
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Arial, sans-serif;
-background:#0a0a0a;
-color:white;
-overflow-x:hidden;
-}
-
-header{
-padding:20px;
-background:#111;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:15px;
-position:sticky;
-top:0;
-z-index:100;
-}
-
-.logo{
-font-size:30px;
-font-weight:bold;
-color:#00ffee;
-}
-
-.brand{
-font-size:14px;
-color:#aaa;
-}
-
-.search{
-padding:12px;
-width:280px;
-border:none;
-border-radius:10px;
-outline:none;
-font-size:16px;
-}
-
-.menu button{
-padding:10px 18px;
-border:none;
-border-radius:10px;
-background:#00ffee;
-font-weight:bold;
-cursor:pointer;
-margin-left:8px;
-}
-
-.banner{
-text-align:center;
-padding:40px 20px;
-background:linear-gradient(135deg,#001f2f,#000,#220033);
-}
-
-.banner h1{
-font-size:52px;
-color:#00ffee;
-}
-
-.banner p{
-color:#bbb;
-margin-top:12px;
-font-size:18px;
-}
-
-.owner{
-margin-top:12px;
-font-size:20px;
-color:#ffd700;
-font-weight:bold;
-}
-
-.categories{
-display:flex;
-gap:12px;
-overflow:auto;
-padding:20px;
-background:#111;
-}
-
-.categories button{
-padding:10px 18px;
-border:none;
-border-radius:30px;
-background:#222;
-color:white;
-cursor:pointer;
-white-space:nowrap;
-}
-
-.categories button:hover{
-background:#00ffee;
-color:black;
-}
-
-.games{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-padding:25px;
-max-width:1400px;
-margin:auto;
-}
-
-.card{
-background:#151515;
-border-radius:18px;
-padding:18px;
-transition:.3s;
-box-shadow:0 0 15px rgba(0,255,255,.08);
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(0,255,255,.25);
-}
-
-.thumb{
-height:130px;
-border-radius:14px;
-background:linear-gradient(135deg,#00ffee,#004466);
-margin-bottom:15px;
-}
-
-.card h3{
-margin-bottom:8px;
-color:#00ffee;
-}
-
-.card p{
-color:#bbb;
-font-size:14px;
-margin-bottom:14px;
-}
-
-.card button{
-width:100%;
-padding:10px;
-border:none;
-border-radius:10px;
-background:#00ffee;
-font-weight:bold;
-cursor:pointer;
-}
-
-.panel{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:25px;
-max-width:1400px;
-margin:auto;
-}
-
-.box{
-background:#111;
-padding:20px;
-border-radius:16px;
-}
-
-.box h2{
-color:#00ffee;
-margin-bottom:12px;
-}
-
-footer{
-padding:35px;
-text-align:center;
-color:#888;
-}
-
-.creator{
-color:#ffd700;
-font-size:18px;
-margin-top:8px;
-}
-
-@media(max-width:700px){
-.banner h1{font-size:34px;}
-.search{width:100%;}
-header{justify-content:center;}
-}
-</style>
-</head>
-<body>
-
-<header>
-<div>
-<div class="logo">🎮 POKI MODE</div>
-<div class="brand">By Valz New Era</div>
-</div>
-
-<input type="text" class="search" placeholder="Cari game..." onkeyup="searchGame(this.value)">
-
-<div class="menu">
-<button onclick="login()">👤 Login</button>
-<button onclick="vip()">👑 VIP</button>
-<button onclick="music()">🎵 Musik</button>
-</div>
-</header>
-
-<section class="banner">
-<h1>100+ GAME GRATIS</h1>
-<p>Main game online gratis tanpa download • HD • 60FPS</p>
-<div class="owner">👑 Creator: Valz New Era</div>
-</section>
-
-<section class="categories">
-<button>Action</button>
-<button>Racing</button>
-<button>Puzzle</button>
-<button>Sport</button>
-<button>Horror</button>
-<button>Multiplayer</button>
-<button>Arcade</button>
-<button>Adventure</button>
-</section>
-
-<section class="games" id="gameList">
-
-<div class="card game">
-<div class="thumb"></div>
-<h3>Snake</h3>
-<p>Game ular klasik modern.</p>
-<button onclick="play('Snake')">Play</button>
-</div>
-
-<div class="card game">
-<div class="thumb"></div>
-<h3>Flappy Bird</h3>
-<p>Terbang hindari pipa.</p>
-<button onclick="play('Flappy Bird')">Play</button>
-</div>
-
-<div class="card game">
-<div class="thumb"></div>
-<h3>Space Shooter</h3>
-<p>Tembak musuh luar angkasa.</p>
-<button onclick="play('Space Shooter')">Play</button>
-</div>
-
-<div class="card game">
-<div class="thumb"></div>
-<h3>Tic Tac Toe</h3>
-<p>Main lawan teman.</p>
-<button onclick="play('Tic Tac Toe')">Play</button>
-</div>
-
-<div class="card game">
-<div class="thumb"></div>
-<h3>Pong</h3>
-<p>Retro game legendaris.</p>
-<button onclick="play('Pong')">Play</button>
-</div>
-
-<div class="card game">
-<div class="thumb"></div>
-<h3>Breakout</h3>
-<p>Pecahkan semua blok.</p>
-<button onclick="play('Breakout')">Play</button>
-</div>
-
-</section>
-
-<section class="panel">
-
-<div class="box">
-<h2>🏆 Leaderboard</h2>
-<p>1. PlayerOne - 9999</p>
-<p>2. GamerX - 8200</p>
-<p>3. ProKing - 7500</p>
-</div>
-
-<div class="box">
-<h2>❤️ Favorite</h2>
-<p>Snake</p>
-<p>Space Shooter</p>
-<p>Pong</p>
-</div>
-
-<div class="box">
-<h2>💰 Monetize</h2>
-<p>Google AdSense Ready</p>
-<p>Premium Membership</p>
-<p>Sponsor Slot</p>
-</div>
-
-<div class="box">
-<h2>⚙ Admin Panel</h2>
-<p>Upload game baru</p>
-<p>Edit game</p>
-<p>Kelola user</p>
-</div>
-
-</section>
-
-<footer>
-© 2026 Full Poki Mode
-<div class="creator">🔥 Powered By Valz New Era</div>
-</footer>
-
-<audio id="audio" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b0471f6d.mp3" type="audio/mp3">
-</audio>
-
-<script>
-function play(name){
-alert("🎮 Membuka game: " + name);
-}
-
-function login(){
-alert("👤 Sistem Login User");
-}
-
-function vip(){
-alert("👑 Membership VIP Aktif");
-}
-
-function music(){
-let a=document.getElementById("audio");
-if(a.paused){
-a.play();
-}else{
-a.pause();
-}
-}
-
-function searchGame(value){
-let input=value.toLowerCase();
-let games=document.querySelectorAll(".game");
-
-games.forEach(item=>{
-let text=item.innerText.toLowerCase();
-item.style.display=text.includes(input) ? "block" : "none";
-});
-}
-</script>
-
-</body>
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--pink:#ff00ff;--cyan:#00ffff;--green:#39ff14;--orange:#ff6b00;--purple:#9d00ff;--glass:rgba(255,255,255,0.1)}
+body{font-family:'Poppins',sans-serif;color:white;text-align:center;background:#000;background:radial-gradient(ellipse at 50% 0%,#1a0033,#000000),linear-gradient(135deg,#0a001a 0%,#000 100%);min-height:100vh;overflow-x:hidden;touch-action:manipulation}
+#particles-js{position:fixed;width:100%;height:100%;top:0;left:0;z-index:-1}
+.container{max-width:550px;margin:0 auto;padding:40px 20px;position:relative;z-index:1}
+.glass-card{background:var(--glass);backdrop-filter:blur(25px) saturate(180%);border:1px solid rgba(255,255,255,0.2);border-radius:30px;padding:35px 20px;box-shadow:0 0 60px rgba(255,0,255,0.3),inset 0 0 60px rgba(255,255,255,0.05);animation:cardGlow 4s ease-in-out infinite alternate}
+@keyframes cardGlow{from{box-shadow:0 0 40px rgba(255,0,255,0.2),inset 0 0 40px rgba(255,255,255,0.03)}to{box-shadow:0 0 80px rgba(0,255,255,0.4),inset 0 0 80px rgba(255,255,255,0.08)}}
+.profile-img{width:140px;height:140px;border-radius:50%;border:3px solid var(--cyan);object-fit:cover;animation:float 3s ease-in-out infinite,glow-cyan 2s ease-in-out infinite alternate;background:conic-gradient(from 0deg,var(--pink),var(--cyan),var(--green),var(--orange),var(--pink));display:flex;align-items:center;justify-content:center;font-size:60px;margin:0 auto;position:relative}
+.profile-img::after{content:'';position:absolute;inset:3px;background:#000;border-radius:50%;z-index:-1}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+@keyframes glow-cyan{from{box-shadow:0 0 25px var(--cyan),0 0 50px var(--cyan)}to{box-shadow:0 0 40px var(--cyan),0 0 80px var(--cyan),0 0 120px var(--cyan)}}
+h1{font-family:'Orbitron',sans-serif;margin:18px 0 8px 0;font-size:36px;font-weight:900;background:linear-gradient(90deg,var(--pink),var(--cyan),var(--green),var(--pink));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s linear infinite;text-shadow:0 0 30px rgba(255,0,255,0.5);letter-spacing:3px}
+@keyframes shine{to{background-position:200% center}}
+.bio{margin:0 0 25px 0;opacity:0.9;line-height:1.6;font-weight:300}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0;padding:20px 0;border-top:1px solid rgba(255,0,255,0.3);border-bottom:1px solid rgba(0,255,255,0.3)}
+.stat-item{font-size:12px;opacity:0.9}
+.stat-item span{display:block;font-size:26px;font-weight:900;font-family:'Orbitron';animation:numberPulse 2s ease-in-out infinite}
+@keyframes numberPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.stat-item:nth-child(1) span{color:var(--green);text-shadow:0 0 15px var(--green)}
+.stat-item:nth-child(2) span{color:var(--cyan);text-shadow:0 0 15px var(--cyan)}
+.stat-item:nth-child(3) span{color:var(--orange);text-shadow:0 0 15px var(--orange)}
+.btn{display:block;background:linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05));color:white;padding:17px;margin:14px 0;border-radius:20px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(15px);transition:0.3s;cursor:pointer;position:relative;overflow:hidden;font-family:'Orbitron',sans-serif;letter-spacing:1.5px}
+.btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:0.5s}
+.btn:hover::before{left:100%}
+.btn:hover{background:linear-gradient(135deg,rgba(255,255,255,0.2),rgba(255,255,255,0.1));box-shadow:0 0 35px var(--pink),inset 0 0 25px rgba(255,0,255,0.2);transform:translateY(-5px) scale(1.03);border-color:var(--pink)}
+.floating-btn{position:fixed;background:var(--glass);border:2px solid var(--cyan);color:var(--cyan);border-radius:50%;width:60px;height:60px;font-size:24px;cursor:pointer;z-index:10;backdrop-filter:blur(20px);transition:0.3s;box-shadow:0 0 25px rgba(0,255,255,0.5);display:flex;align-items:center;justify-content:center}
+.floating-btn:hover{transform:scale(1.25) rotate(20deg);box-shadow:0 0 45px var(--cyan)}
+#music-btn{bottom:25px;right:25px}
+#share-btn{bottom:95px;right:25px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);z-index:100;justify-content:center;align-items:center;flex-direction:column;overflow-y:auto;padding:20px;backdrop-filter:blur(10px)}
+.closeGame{position:absolute;top:25px;right:25px;font-size:45px;color:var(--pink);cursor:pointer;z-index:101;transition:0.3s;text-shadow:0 0 20px var(--pink);font-weight:900}
+.closeGame:hover{transform:rotate(90deg) scale(1.3);color:var(--cyan);text-shadow:0 0 30px var(--cyan)}
+.game-title{font-family:'Orbitron',sans-serif;font-size:32px;margin-bottom:20px;color:var(--green);text-shadow:0 0 20px var(--green);font-weight:900;letter-spacing:2px}
+.game-info{color:white;margin:15px;font-size:19px;font-weight:600;font-family:'Orbitron'}
+canvas,.game-board{border:3px solid var(--cyan);border-radius:25px;background:#000;box-shadow:0 0 50px var(--cyan),inset 0 0 40px rgba(0,255,255,0.15);max-width:95vw;height:auto;image-rendering:pixelated;image-rendering:crisp-edges}
+.game-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;max-width:480px;width:100%}
+.game-menu.btn{margin:0;padding:16px 8px;font-size:13px}
+.dpad{margin-top:20px;display:grid;grid-template-columns:70px 70px 70px;gap:12px}
+.dpad button{width:70px;height:70px;font-size:28px;background:var(--glass);border:2px solid var(--pink);color:var(--pink);border-radius:18px;cursor:pointer;transition:0.15s;box-shadow:0 0 20px rgba(255,0,255,0.4);backdrop-filter:blur(10px)}
+.dpad button:active{background:var(--pink);color:#000;transform:scale(0.88);box-shadow:0 0 40px var(--pink)}
+.grid-2048{display:grid;grid-template-columns:repeat(4,80px);gap:12px;background:rgba(0,0,0,0.7);padding:15px;border-radius:25px;border:2px solid var(--cyan);box-shadow:0 0 40px rgba(0,255,255,0.4)}
+.tile-2048{width:80px;height:80px;background:rgba(255,255,255,0.05);border-radius:15px;display:flex;justify-content:center;align-items:center;font-size:28px;font-weight:900;font-family:'Orbitron';transition:0.2s;border:1px solid rgba(255,255,255,0.15);box-shadow:inset 0 0 15px rgba(0,0,0,0.5)}
+.memory-board{display:grid;grid-template-columns:repeat(4,80px);gap:14px}
+.memory-card{width:80px;height:80px;background:linear-gradient(145deg,#1a1a1a,#0a0a0a);border:2px solid var(--cyan);border-radius:18px;display:flex;justify-content:center;align-items:center;font-size:40px;cursor:pointer;transition:0.5s;transform-style:preserve-3d;box-shadow:0 0 25px rgba(0,255,255,0.3),inset 0 0 20px rgba(0,0,0,0.5)}
+.memory-card.flip{transform:rotateY(180deg);background:linear-gradient(145deg,#0a0a0a,#1a1a1a);box-shadow:0 0 40px var(--cyan)}
+.tictactoe-board{display:grid;grid-template-columns:repeat(3,110px);gap:14px}
+.ttt-cell{width:110px;height:110px;background:rgba(0,0,0,0.75);border:2px solid var(--pink);border-radius:20px;display:flex;justify-content:center;align-items:center;font-size:60px;cursor:pointer;transition:0.3s;font-family:'Orbitron';font-weight:900;backdrop-filter:blur(5px)}
+.ttt-cell:hover{background:rgba(255,0,255,0.2);box-shadow:0 0 30px var(--pink);transform:scale(1.08)}
+#breakoutCanvas{background:linear-gradient(180deg,#000,#0a0a2a)}
+.sudoku-board{display:grid;grid-template-columns:repeat(9,40px);gap:2px;background:var(--cyan);padding:3px;border-radius:10px}
+.sudoku-cell{width:40px;height:40px;background:#000;border:none;color:white;font-size:18px;font-family:'Orbitron';text-align:center;cursor:pointer}
+.sudoku-cell:focus{background:rgba(0,255,255,0.2);outline:2px solid var(--cyan)}
+#toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--glass);border:2px solid var(--green);padding:18px 36px;border-radius:50px;backdrop-filter:blur(25px);display:none;z-index:200;box-shadow:0 0 40px var(--green);font-family:'Orbitron';font-weight:700;color:var(--green)}
+.joystick{position:fixed;bottom:30px;left:30px;width:120px;height:120px;background:var(--glass);border:2px solid var(--cyan);border-radius:50%;display:none;backdrop-filter:blur(15px);z-index:50}
+.joystick-handle{position:absolute;top:50%;left:50%;width:50px;height:50px;background:var(--cyan);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 20px var(--cyan)}
+@media (max-width:600px){.game-menu{grid-template-columns:repeat(2,1fr)}.tictactoe-board{grid-template-columns:repeat(3,95px)}.ttt-cell{width:95px;height:95px;font-size:48px}.grid-2048{grid-template-columns:repeat(4,72px)}.tile-2048{width:72px;height:72px;font-size:24px}.memory-board{grid-template-columns:repeat(4,72px)}.memory-card{width:72px;height:72px;font-size:34px}.sudoku-board{grid-template-columns:repeat(9,35px)}.sudoku-cell{width:35px;height:35px;font-size:16px}h1{font-size:30px}}
+</style></head><body><div id="particles-js"></div><div class="container"><div class="glass-card"><div class="profile-img">🎮</div><h1>ARCADE PRO MAX HD</h1><div class="bio"><p>10 Game HD | Efek Partikel | Sound SFX</p><p>Malang, East Java 🇮🇩</p></div><div class="stats"><div class="stat-item"><span id="visitCount">0</span> Views</div><div class="stat-item"><span id="gamePlayed">0</span> Games</div><div class="stat-item"><span id="highScore">0</span> Best Score</div></div><a href="https://instagram.com" class="btn" target="_blank">INSTAGRAM</a><a href="https://wa.me/628" class="btn" target="_blank">WHATSAPP</a><a href="https://tiktok.com" class="btn" target="_blank">TIKTOK</a><a href="https://saweria.co" class="btn" target="_blank">SUPPORT</a><div onclick="openGameMenu()" class="btn">MAIN GAME HD</div></div></div><button id="share-btn" class="floating-btn" onclick="shareLink()">🔗</button><button id="music-btn" class="floating-btn">🔇</button><div id="joystick" class="joystick"><div class="joystick-handle"></div></div><div id="toast">LINK COPIED!</div><div id="gameMenuModal" class="modal"><div class="closeGame" onclick="closeModal('gameMenuModal')">×</div><h2 class="game-title">PILIH GAME HD</h2><div class="game-menu"><div onclick="startGame('snake')" class="btn">SNAKE 4K 🐍</div><div onclick="startGame('2048')" class="btn">2048 ULTRA 🎯</div><div onclick="startGame('flappy')" class="btn">FLAPPY PRO 🐦</div><div onclick="startGame('memory')" class="btn">MEMORY MAX 🧠</div><div onclick="startGame('tictactoe')" class="btn">TIC TAC ❌⭕</div><div onclick="startGame('breakout')" class="btn">BREAKOUT 🏆</div><div onclick="startGame('tetris')" class="btn">TETRIS HD 🔲</div><div onclick="startGame('pong')" class="btn">PONG PRO 🏓</div><div onclick="startGame('racing')" class="btn">RACING 🏎️</div><div onclick="startGame('sudoku')" class="btn">SUDOKU 🔢</div></div></div><div id="snakeModal" class="modal"><div class="closeGame" onclick="closeGame('snake')">×</div><div class="game-title">SNAKE 4K</div><div id="snakeInfo" class="game-info">SCORE: 0 | HIGH: <span id="snakeHigh">0</span></div><canvas id="snakeCanvas" width="800" height="800" style="width:400px;height:400px"></canvas><div class="dpad"><div></div><button onclick="snakeDir('UP')">⬆️</button><div></div><button onclick="snakeDir('LEFT')">⬅️</button><div></div><button onclick="snakeDir('RIGHT')">➡️</button><div></div><button onclick="snakeDir('DOWN')">⬇️</button><div></div></div></div><div id="2048Modal" class="modal"><div class="closeGame" onclick="closeGame('2048')">×</div><div class="game-title">2048 ULTRA</div><div id="2048Info" class="game-info">SCORE: 0 | BEST: <span id="2048High">0</span></div><div id="grid2048" class="grid-2048"></div><div class="dpad"><div></div><button onclick="move2048('up')">⬆️</button><div></div><button onclick="move2048('left')">⬅️</button><div></div><button onclick="move2048('right')">➡️</button><div></div><button onclick="move2048('down')">⬇️</button><div></div></div></div><div id="flappyModal" class="modal"><div class="closeGame" onclick="closeGame('flappy')">×</div><div class="game-title">FLAPPY PRO</div><div id="flappyInfo" class="game-info">SCORE: 0 | BEST: <span id="flappyHigh">0</span></div><canvas id="flappyCanvas" width="800" height="1200" style="width:400px;height:600px"></canvas><div style="margin-top:15px;opacity:0.7;font-family:Orbitron">TAP/SPASI TO FLY</div></div><div id="memoryModal" class="modal"><div class="closeGame" onclick="closeGame('memory')">×</div><div class="game-title">MEMORY MAX</div><div id="memoryInfo" class="game-info">MOVES: 0 | BEST: <span id="memoryHigh">-</span></div><div id="memoryBoard" class="memory-board"></div></div><div id="tictactoeModal" class="modal"><div class="closeGame" onclick="closeGame('tictactoe')">×</div><div class="game-title">TIC TAC PRO</div><div id="tttInfo" class="game-info">TURN: ❌</div><div id="tttBoard" class="tictactoe-board"></div><div onclick="resetTTT()" class="btn" style="margin-top:20px;max-width:250px">NEW GAME</div></div><div id="breakoutModal" class="modal"><div class="closeGame" onclick="closeGame('breakout')">×</div><div class="game-title">BREAKOUT</div><div id="breakoutInfo" class="game-info">SCORE: 0 | BEST: <span id="breakoutHigh">0</span></div><canvas id="breakoutCanvas" width="800" height="1000" style="width:400px;height:500px"></canvas><div style="margin-top:15px;opacity:0.7;font-family:Orbitron">DRAG OR ← → TO MOVE</div></div><div id="tetrisModal" class="modal"><div class="closeGame" onclick="closeGame('tetris')">×</div><div class="game-title">TETRIS HD</div><div id="tetrisInfo" class="game-info">SCORE: 0 | LINES: <span id="tetrisLines">0</span></div><canvas id="tetrisCanvas" width="600" height="1200" style="width:300px;height:600px"></canvas><div class="dpad" style="grid-template-columns:60px 60px 60px"><button onclick="tetrisMove('left')">⬅️</button><button onclick="tetrisMove('rotate')">🔄</button><button onclick="tetrisMove('right')">➡️</button><div></div><button onclick="tetrisMove('down')">⬇️</button><div></div></div></div><div id="pongModal" class="modal"><div class="closeGame" onclick="closeGame('pong')">×</div><div class="game-title">PONG PRO</div><div id="pongInfo" class="game-info">YOU: 0 | BOT: 0</div><canvas id="pongCanvas" width="1200" height="800" style="width:600px;height:400px"></canvas><div style="margin-top:15px;opacity:0.7;font-family:Orbitron">DRAG OR ↑↓ TO MOVE</div></div><div id="racingModal" class="modal"><div class="closeGame" onclick="closeGame('racing')">×</div><div class="game-title">RACING HD</div><div id="racingInfo" class="game-info">SCORE: 0 | BEST: <span id="racingHigh">0</span></div><canvas id="racingCanvas" width="800" height="1200" style="width:400px;height:600px"></canvas><div style="margin-top:15px;opacity:0.7;font-family:Orbitron">← → TO STEER</div></div><div id="sudokuModal" class="modal"><div class="closeGame" onclick="closeGame('sudoku')">×</div><div class="game-title">SUDOKU</div><div id="sudokuInfo" class="game-info">TIME: <span id="sudokuTime">0:00</span></div><div id="sudokuBoard" class="sudoku-board"></div><div onclick="newSudoku()" class="btn" style="margin-top:20px;max-width:250px">NEW PUZZLE</div></div><audio id="bg-music" loop></audio><script src="https://cdn.jsdelivr.net/particles.js/2.0/particles.min.js"></script><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script><script>
+particlesJS("particles-js",{"particles":{"number":{"value":120},"color":{"value":["#ff00ff","#00ffff","#39ff14","#ff6b00"]},"shape":{"type":"circle"},"opacity":{"value":0.6,"random":true,"anim":{"enable":true,"speed":1}},"size":{"value":4,"random":true,"anim":{"enable":true,"speed":2}},"line_linked":{"enable":true,"distance":150,"color":"#00ffff","opacity":0.2,"width":1},"move":{"enable":true,"speed":2,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false}}});
+let visits=localStorage.getItem('visits')||0;visits++;localStorage.setItem('visits',visits);document.getElementById('visitCount').textContent=visits;
+let gamesPlayed=localStorage.getItem('gamesPlayed')||0;document.getElementById('gamePlayed').textContent=gamesPlayed;
+const highScores={snake:localStorage.getItem('snakeHigh')||0,'2048':localStorage.getItem('2048High')||0,flappy:localStorage.getItem('flappyHigh')||0,memory:localStorage.getItem('memoryHigh')||'-',breakout:localStorage.getItem('breakoutHigh')||0,racing:localStorage.getItem('racingHigh')||0};
+Object.keys(highScores).forEach(g=>{const el=document.getElementById(g+'High');if(el)el.textContent=highScores[g]});
+let totalHigh=Math.max(...Object.values(highScores).filter(v=>!isNaN(v)).map(Number));document.getElementById('highScore').textContent=totalHigh;
+const music=document.getElementById('bg-music');const musicBtn=document.getElementById('music-btn');
+// Ambient sound generator
+function genAmbient(){const a=new(window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator();const g=a.createGain();o.type='sine';o.frequency.value=55;g.gain.value=0.02;o.connect(g);g.connect(a.destination);o.start();return a}
+let audioCtx=null;
+musicBtn.onclick=()=>{if(!audioCtx){audioCtx=genAmbient();musicBtn.innerHTML='🔊'}else{audioCtx.close();audioCtx=null;musicBtn.innerHTML='🔇'}};
+document.body.addEventListener('click',()=>{if(!audioCtx){audioCtx=genAmbient();musicBtn.innerHTML='🔊'}},{once:true});
+function playSound(f,d,t='sine'){try{const a=new(window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator();const g=a.createGain();o.type=t;o.frequency.value=f;g.gain.value=0.15;o.connect(g);g.connect(a.destination);o.start();g.gain.exponentialRampToValueAtTime(0.01,a.currentTime+d);o.stop(a.currentTime+d)}catch(e){}}
+function particle(x,y,c){confetti({particleCount:30,spread:60,origin:{x:x/window.innerWidth,y:y/window.innerHeight},colors:[c],startVelocity:30,gravity:1.5})}
+function shareLink(){navigator.clipboard.writeText(window.location.href);showToast('LINK COPIED!');playSound(800,0.1,'square')}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2000)}
+function openGameMenu(){document.getElementById('gameMenuModal').style.display='flex';playSound(600,0.1,'triangle')}
+function closeModal(id){document.getElementById(id).style.display='none'}
+function startGame(g){closeModal('gameMenuModal');document.getElementById(g+'Modal').style.display='flex';gamesPlayed++;localStorage.setItem('gamesPlayed',gamesPlayed);document.getElementById('gamePlayed').textContent=gamesPlayed;playSound(700,0.15,'sawtooth');if(g==='snake')initSnake();if(g==='2048')init2048();if(g==='flappy')initFlappy();if(g==='memory')initMemory();if(g==='tictactoe')initTTT();if(g==='breakout')initBreakout();if(g==='tetris')initTetris();if(g==='pong')initPong();if(g==='racing')initRacing();if(g==='sudoku')initSudoku()}
+function closeGame(g){closeModal(g+'Modal');if(g==='snake')clearInterval(snakeLoop);if(g==='flappy')cancelAnimationFrame(flappyLoop);if(g==='breakout')cancelAnimationFrame(breakoutLoop);if(g==='tetris')clearInterval(tetrisLoop);if(g==='pong')cancelAnimationFrame(pongLoop);if(g==='racing')cancelAnimationFrame(racingLoop)}
+function updateHighScore(g,s){if(s>(highScores[g]||0)){highScores[g]=s;localStorage.setItem(g+'High',s);const el=document.getElementById(g+'High');if(el)el.textContent=s;totalHigh=Math.max(...Object.values(highScores).filter(v=>!isNaN(v)).map(Number));document.getElementById('highScore').textContent=totalHigh;confetti({particleCount:250,spread:180,origin:{y:0.6},colors:['#ff00ff','#00ffff','#39ff14','#ff6b00']});playSound(1000,0.4,'square');return true}return false}
+// SNAKE 4K
+let snakeCanvas,snakeCtx,snake,snakeFood,snakeDx,snakeDy,snakeScore,snakeLoop,snakeChangingDir;
+function initSnake(){snakeCanvas=document.getElementById('snakeCanvas');snakeCtx=snakeCanvas.getContext('2d');snakeCtx.scale(2,2);snake=[{x:200,y:200},{x:180,y:200},{x:160,y:200}];snakeFood={};snakeDx=20;snakeDy=0;snakeScore=0;snakeChangingDir=false;createSnakeFood();document.addEventListener('keydown',snakeKey);snakeLoop=setInterval(drawSnakeGame,70)}
+function drawSnakeGame(){if(snakeGameOver()){clearInterval(snakeLoop);updateHighScore('snake',snakeScore);playSound(200,0.5,'sawtooth');setTimeout(()=>{alert('GAME OVER! SCORE: '+snakeScore);closeGame('snake')},100);return}snakeChangingDir=false;snakeCtx.fillStyle='#000';snakeCtx.fillRect(0,0,400,400);snakeCtx.strokeStyle='rgba(0,255,255,0.1)';snakeCtx.lineWidth=1;for(let i=0;i<=400;i+=20){snakeCtx.beginPath();snakeCtx.moveTo(i,0);snakeCtx.lineTo(i,400);snakeCtx.moveTo(0,i);snakeCtx.lineTo(400,i);snakeCtx.stroke()}const pulse=Math.sin(Date.now()/150)*4;const foodGrad=snakeCtx.createRadialGradient(snakeFood.x+10,snakeFood.y+10,0,snakeFood.x+10,snakeFood.y+10,15);foodGrad.addColorStop(0,'#ff00ff');foodGrad.addColorStop(1,'#ff0066');snakeCtx.fillStyle=foodGrad;snakeCtx.shadowColor='#ff00ff';snakeCtx.shadowBlur=30;snakeCtx.beginPath();snakeCtx.arc(snakeFood.x+10,snakeFood.y+10,10+pulse,0,7);snakeCtx.fill();snakeCtx.shadowBlur=0;const head={x:snake[0].x+snakeDx,y:snake[0].y+snakeDy};snake.unshift(head);if(head.x===snakeFood.x&&head.y===snakeFood.y){snakeScore+=10;document.getElementById('snakeInfo').innerHTML='SCORE: '+snakeScore+' | HIGH: '+highScores.snake;createSnakeFood();playSound(800,0.1,'square');particle(head.x*2,head.y*2,'#ff00ff')}else{snake.pop()}snake.forEach((p,i)=>{const alpha=1-(i/snake.length)*0.6;const size=i===0?18:16;const grad=snakeCtx.createRadialGradient(p.x+10,p.y+10,0,p.x+10,p.y+10,size);grad.addColorStop(0,i===0?'#F7E7A1':'#D4AF37');grad.addColorStop(1,i===0?'#D4AF37':'#B8941F');snakeCtx.fillStyle=grad;snakeCtx.shadowColor='#D4AF37';snakeCtx.shadowBlur=20;snakeCtx.beginPath();snakeCtx.roundRect(p.x+2,p.y+2,size,size,8);snakeCtx.fill();snakeCtx.shadowBlur=0})}
+function createSnakeFood(){snakeFood.x=Math.round(Math.random()*19)*20;snakeFood.y=Math.round(Math.random()*19)*20;snake.forEach(p=>{if(p.x===snakeFood.x&&p.y===snakeFood.y)createSnakeFood()})}
+function snakeGameOver(){for(let i=4;i<snake.length;i++){if(snake[i].x===snake[0].x&&snake[i].y===snake[0].y)return true}return snake[0].x<0||snake[0].x>380||snake[0].y<0||snake[0].y>380}
+function snakeKey(e){if(snakeChangingDir)return;snakeChangingDir=true;if(e.keyCode===37&&snakeDx!==20){snakeDx=-20;snakeDy=0}if(e.keyCode===38&&snakeDy!==20){snakeDx=0;snakeDy=-20}if(e.keyCode===39&&snakeDx!==-20){snakeDx=20;snakeDy=0}if(e.keyCode===40&&snakeDy!==-20){snakeDx=0;snakeDy=20}}
+function snakeDir(d){if(snakeChangingDir)return;snakeChangingDir=true;if(d==='LEFT'&&snakeDx!==20){snakeDx=-20;snakeDy=0}if(d==='UP'&&snakeDy!==20){snakeDx=0;snakeDy=-20}if(d==='RIGHT'&&snakeDx!==-20){snakeDx=20;snakeDy=0}if(d==='DOWN'&&snakeDy!==-20){snakeDx=0;snakeDy=20}playSound(400,0.05,'triangle')}
+// 2048 ULTRA
+let board2048,score2048;
+function init2048(){board2048=Array(4).fill().map(()=>Array(4).fill(0));score2048=0;addTile2048();addTile2048();draw2048();document.addEventListener('keydown',key2048)}
+function addTile2048(){let empty=[];for(let r=0;r<4;r++){for(let c=0;c<4;c++){if(board2048[r][c]===0)empty.push({r,c})}}if(empty.length){let {r,c}=empty[Math.floor(Math.random()*empty.length)];board2048[r][c]=Math.random()<0.9?2:4}}
+function draw2048(){const grid=document.getElementById('grid2048');grid.innerHTML='';board2048.forEach(row=>row.forEach(val=>{const tile=document.createElement('div');tile.className='tile-2048';tile.textContent=val||'';if(val){const power=Math.log2(val);const hue=45+power*18;const sat=Math.min(70+power*4,100);const light=Math.max(70-power*4,30);const grad=`radial-gradient(circle at 30% 30%,hsl(${hue},${sat}%,${light+15}%),hsl(${hue},${sat}%,${light}%))`;tile.style.background=grad;tile.style.color=val>4?'#000':'#FFF';tile.style.boxShadow=`0 0 25px hsla(${hue},90%,60%,0.7),inset 0 0 20px rgba(255,255,255,0.3),inset 0 -5px 15px rgba(0,0,0,0.3)`;tile.style.transform='scale(1.08)';setTimeout(()=>tile.style.transform='scale(1)',100)}grid.appendChild(tile)}));document.getElementById('2048Info').
